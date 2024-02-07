@@ -3362,7 +3362,8 @@ readers do not read off random characters that represent icons */
     text-align: center; }
     .hb-slidercontent h1 {
       font-size: 40px;
-      line-height: 60px; }
+      line-height: 60px;
+    color: white; }
   .hb-slidercontent-area {
     padding: 0; }
   .hb-sectiontitle h2 {
@@ -3806,7 +3807,7 @@ readers do not read off random characters that represent icons */
     .hb-socialicons-area .hb-socialicons {
       text-align: center; }
   .hb-slidercontent .hb-description p {
-    color: #000; }
+    color: white; }
   .hb-twoheading {
     font-size: 20px;
     line-height: 23px; }

@@ -5424,6 +5424,8 @@ body {
 
 .hb-logo a img {
   display: block;
+  height: 100px;
+  width: 230px;
 }
 
 /* =============================================
@@ -5435,6 +5437,9 @@ body {
   font-size: 14px;
   line-height: 18px;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* =============================================
@@ -8018,7 +8023,7 @@ body {
 ============================================= */
 .hb-innerbanner {
   background-size: cover;
-  background-image: url("../images/innerbanner-bg.jpg");
+  background-image: url("../images/aboutus.jpg");
   background-repeat: no-repeat;
 }
 
