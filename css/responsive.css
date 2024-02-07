@@ -3365,7 +3365,10 @@ readers do not read off random characters that represent icons */
       line-height: 60px;
     color: white; }
   .hb-slidercontent-area {
-    padding: 0; }
+    padding: 0; 
+  display: grid;
+justify-content: center;
+align-items: center;}
   .hb-sectiontitle h2 {
     font-size: 25px;
     line-height: 35px; }
