@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Paradise | Multipurpose HTML Template</title>
+    <title>JustDesign.app</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/icofont.css">
@@ -33,7 +33,7 @@
 				Header Start
 		*************************************-->
         <header id="hb-header" class="hb-header hb-haslayout">
-            <div class="hb-topbar">
+            <div id="hb-topbar" class="hb-topbar">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -47,9 +47,10 @@
                             </div>
                             <div class="hb-socialicons-area">
                                 <ul class="hb-socialicons hb-withoutbackground list-unstyled">
-                                    <li><a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://wa.me/+919030742090"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a
+                                            href="https://www.instagram.com/justdesign.app?igsh=MWFzcHBxNmJ0dnIwag%3D%3D&utm_source=qr"><i
+                                                class="fab fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -85,7 +86,7 @@
                                         <li class="menu-item-has-children">
                                             <a href="gallery.html">Interior Themes</a>
                                         </li>
-                                        <li><a href="https://form.jotform.com/240373713054450">Contact</a></li>
+                                        <li><a href="#hb-footer">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -131,247 +132,312 @@
                                     <div class="col-xs-12">
                                         <div class="hb-headcontent">
                                             <h2>Get ready to see your space</h2>
+
                                             <div id="designForm">
-                                                <div class="view-lable">
-                                                    <p for="use">Is the design for residential or commercial use?</p>
-                                                </div>
-                                                <select id="use">
-                                                    <option value="">Select</option>
-                                                    <option value="residential">Residential</option>
-                                                    <option value="commercial">Commercial</option>
-                                                </select>
-                                                <div id="spaceQuestion" style="display: none;">
-                                                    <label for="space">Which space do you want to design?</label>
-                                                    <select id="space">
-                                                        <option value="">Select</option>
-                                                        <option value="bedroom">Bedroom</option>
-                                                        <option value="livingroom">Living Room</option>
-                                                        <option value="diningroom">Dining Room</option>
-                                                        <option value="kitchen">Kitchen</option>
-                                                        <option value="bathroom">Bathroom</option>
-                                                    </select>
-                                                </div>
-                                                <div id="styleQuestion" style="display: none;">
-                                                    <label for="style">Select your style:</label>
-                                                    <select id="style">
-                                                        <option value="">Select</option>
-                                                        <option value="contemporary">Contemporary</option>
-                                                        <option value="minimalistic">Minimalistic</option>
-                                                        <option value="traditional">Traditional</option>
-                                                        <option value="scandinavian">Scandinavian</option>
-                                                        <option value="industrialist">Industrialist</option>
-                                                    </select>
-                                                </div>
-                                                <button class="hb-btn" style="margin: 10px;"
-                                                    onclick="proceed()">Proceed</button>
+                                                <form id="form" method="POST">
+                                                    <div class="form-group">
+                                                        <div id="nameEmailQuestions" style="display: block;">
+                                                            <label for="from_name">Name</label>
+                                                            <input type="text" id="from_name" class="form-control"
+                                                                placeholder="Enter your name">
+                                                            <label for="email">Email</label>
+                                                            <input type="text" id="email" class="form-control"
+                                                                placeholder="Enter your email">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div id="useQuestion" style="display: block;">
+                                                            <p for="use">Is the design for residential or commercial
+                                                                use?
+                                                            </p>
+                                                            <select id="use">
+                                                                <option value="">Select</option>
+                                                                <option value="residential">Residential</option>
+                                                                <option value="commercial">Commercial</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div id="spaceQuestion" style="display: none;">
+                                                            <label for="space">Which space do you want to
+                                                                design?</label>
+                                                            <select id="space">
+                                                                <option value="">Select</option>
+                                                                <option value="bedroom">Bedroom</option>
+                                                                <option value="livingroom">Living Room</option>
+                                                                <option value="diningroom">Dining Room</option>
+                                                                <option value="kitchen">Kitchen</option>
+                                                                <option value="bathroom">Bathroom</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div id="dimensionQuestion" style="display: none;">
+                                                            <label for="dimensions">Room Dimensions</label>
+                                                            <input type="text" id="dimensions" class="form-control"
+                                                                placeholder="Enter length x width (e.g., 10ft x 12ft)">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div id="styleQuestion" style="display: none;">
+                                                            <label for="style">Select your style:</label>
+                                                            <div id="style" class="image-choices">
+                                                                <label for="style_contemporary">
+                                                                    <input type="radio" id="style_contemporary"
+                                                                        name="style" value="contemporary">
+                                                                    <img src="images/interior-themes1.jpg"
+                                                                        alt="Contemporary" width="100" height="75">
+                                                                    Contemporary
+                                                                </label>
+                                                                <label for="style_minimalistic">
+                                                                    <input type="radio" id="style_minimalistic"
+                                                                        name="style" value="minimalistic">
+                                                                    <img src="images/interior-themes2.jpg"
+                                                                        alt="Minimalistic" width="100" height="75">
+                                                                    Scandinavian
+                                                                </label>
+                                                                <label for="style_contemporary">
+                                                                    <input type="radio" id="style_contemporary"
+                                                                        name="style" value="contemporary">
+                                                                    <img src="images/interior-themes4.jpg"
+                                                                        alt="Contemporary" width="100" height="75">
+                                                                    Traditional
+                                                                </label>
+                                                                <label for="style_contemporary">
+                                                                    <input type="radio" id="style_contemporary"
+                                                                        name="style" value="contemporary">
+                                                                    <img src="images/interior-themes5.jpg"
+                                                                        alt="Contemporary" width="100" height="75">
+                                                                    Industrialist
+                                                                </label>
+                                                                <label for="style_contemporary">
+                                                                    <input type="radio" id="style_contemporary"
+                                                                        name="style" value="contemporary">
+                                                                    <img src="images/interior-themes6.jpg"
+                                                                        alt="Contemporary" width="100" height="75">
+                                                                    Minimalistic
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                             </div>
 
-                                            <div id="videoPlayer" style="display: none;">
-                                                <div class="video-container">
-                                                    <video id="video" controls>
-                                                        <source id="videoSource" src="" type="video/mp4">
-                                                        Your browser does not support the video tag.
-                                                    </video>
+                                            <div class="form-group">
+                                                <div id="additionalInfo" style="display: none;">
+                                                    <label for="additionalInfo">Additional Information</label>
+                                                    <input type="text" id="info" class="form-control"
+                                                        placeholder="Share any design preferences or special considerations">
                                                 </div>
-                                                <button class="hb-btn" style="margin: 10px;" onclick="goBack()">Go Back</button>
                                             </div>
-                                            <style>
-                                                .video-container {
-                                                    position: relative;
-                                                    padding-bottom: 56.25%;
-                                                    /* 16:9 aspect ratio (change to match your video aspect ratio) */
-                                                    padding-top: 25px;
-                                                    height: 0;
-                                                    overflow: hidden;
-                                                }
 
-                                                .video-container video {
-                                                    position: absolute;
-                                                    top: 0;
-                                                    left: 0;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                }
+                                            <button class="hb-btn" style="margin: 10px;"
+                                                onclick="proceed()">Proceed</button>
 
-                                                #videoPlayer {
-                                                    text-align: center;
-                                                }
-                                            </style>
-
-
-                                            <script>
-                                                function proceed() {
-                                                    var use = document.getElementById("use").value;
-                                                    var space = document.getElementById("space").value;
-                                                    var style = document.getElementById("style").value;
-
-                                                    if (use && space && style) {
-                                                        // Depending on the options selected, choose the appropriate video
-                                                        var videoPath = "videos/";
-                                                        if (use === "residential") {
-                                                            videoPath += "residential/";
-                                                        } else {
-                                                            videoPath += "commercial/";
-                                                        }
-                                                        videoPath += space + "_" + style + ".mp4";
-
-                                                        // Update the video source and display the video player
-                                                        var video = document.getElementById("video");
-                                                        var videoSource = document.getElementById("videoSource");
-                                                        videoSource.src = videoPath;
-                                                        video.load();
-                                                        document.getElementById("designForm").style.display = "none";
-                                                        document.getElementById("videoPlayer").style.display = "block";
-                                                        video.play();
-                                                    } else {
-                                                        alert("Please select all options.");
-                                                    }
-                                                }
-
-                                                document.getElementById("use").addEventListener("change", function () {
-                                                    var spaceQuestion = document.getElementById("spaceQuestion");
-                                                    if (this.value) {
-                                                        spaceQuestion.style.display = "block";
-                                                    } else {
-                                                        spaceQuestion.style.display = "none";
-                                                        document.getElementById("styleQuestion").style.display = "none";
-                                                    }
-                                                });
-
-                                                document.getElementById("space").addEventListener("change", function () {
-                                                    var styleQuestion = document.getElementById("styleQuestion");
-                                                    if (this.value) {
-                                                        styleQuestion.style.display = "block";
-                                                    } else {
-                                                        styleQuestion.style.display = "none";
-                                                    }
-                                                });
-
-
-                                                function goBack() {
-                                                    document.getElementById("videoPlayer").style.display = "none";
-                                                    document.getElementById("designForm").style.display = "block";
-                                                    document.getElementById("video").pause();
-                                                }
-
-                                            </script>
+                                            </form>
                                         </div>
+
                                     </div>
                                 </div>
-
-
-
-
-
                             </div>
+
                         </div>
                     </div>
                 </div>
-            </section>
-            <!--************************************
+
+
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!--************************************
 						Paradise Center End
 			*************************************-->
-        </main>
-        <!--************************************
+    </main>
+    <!--************************************
 				Main End
 		*************************************-->
-        <!--************************************
+    <!--************************************
 				Footer Start
 		*************************************-->
-        <footer id="hb-footer" class="hb-footer hb-haslayout">
-            <div class="hb-footer-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <div class="hb-col">
-                                <strong class="hb-logo">
-                                    <!-- <a href="javascript:void"><img src="images/logo.png" alt=""></a> -->
-                                </strong>
-                                <span class="hb-timeandday">Open hours: 8.00-18.00 Mon-Fri</span>
-                                <ul class="list-unstyled hb-socialicons">
-                                    <!-- <li><a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-									<li class="hb-googleplus"><a href="javascript:void(0);"><i class="fab fa-google-plus-g"></i></a></li> -->
-                                    <li><a
-                                            href="https://www.instagram.com/justdesign.app?igsh=MWFzcHBxNmJ0dnIwag%3D%3D&utm_source=qr"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <div class="hb-col">
-                                <h3>Contacts</h3>
-                                <ul class="list-unstyled hb-info">
-                                    <li><span>+91 9030742090<a href="#">justdesign.app@gmail.com</a></span>
-                                    </li>
-                                    <li><span>Beside NMDC - Vijaya Nagar Colony Road, NMDC Colony,<em>Venkatadri Colony,
-                                                Masab Tank, Hyderabad, Telangana 500004</em></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <div class="hb-col">
-                                <h3>Our Newsletter</h3>
-                                <div class="hb-emailarea">
-                                    <form class="hb-formtheme">
-                                        <fieldset>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="E-mail">
-                                                <button type="submit" class="hb-btn">SUBSCRIBE</button>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                                <div class="hb-description">
-                                    <p>Subscribe to our mailing list to get the updates to your email inbox.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <div class="hb-col hb-widget">
-                                <ul>
-                                    <!-- <li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80" alt="image description"></a></li>
-									<li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80" alt="image description"></a></li>
-									<li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80" alt="image description"></a></li>
-									<li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80" alt="image description"></a></li>
-									<li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80" alt="image description"></a></li>
-									<li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80" alt="image description"></a></li> -->
-                                </ul>
-                            </div>
+    <footer id="hb-footer" class="hb-footer hb-haslayout">
+        <div class="hb-footer-area">
+            <div class="container">
+                <div class="row" style="display: flex;
+					align-items: center;">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="hb-col">
+                            <h3>Contacts</h3>
+                            <ul class="list-unstyled hb-info">
+                                <li><span>+91 9030742090<a href="#">justdesign.app@gmail.com</a></span>
+                                </li>
+                                <li><span>Beside NMDC - Vijaya Nagar Colony Road, NMDC Colony,<em>Venkatadri Colony,
+                                            Masab Tank, Hyderabad, Telangana 500004</em></span></li>
+                            </ul>
                         </div>
                     </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="hb-col">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.273058602285!2d78.44687837593371!3d17.398678683490516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb979c46fb2f09%3A0x5f03837e29755b4b!2sEdVenture%20Park!5e0!3m2!1sen!2sin!4v1707547689970!5m2!1sen!2sin"
+                                height="350" style="width: 800px; border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <!-- <div class="hb-footerbar">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<span class="hb-copyright">Copyright ©2018 DeerCreative.</span>
-							<ul class="list-unstyled hb-footernav">
-								<li><a href="javascript:void(0);">About </a></li>
-								<li><a href="javascript:void(0);">Terms & Conditions</a></li>
-								<li><a href="javascript:void(0);">Privacy Policy</a></li>
-								<li><a href="javascript:void(0);">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div> -->
-        </footer>
-        <!--************************************
+        </div>
+        </div>
+    </footer>
+    <!--************************************
 				Footer End
 		*************************************-->
-        <span id="back-top" class="text-center rounded-circle fa fa-angle-up"></span>
-        <div id="loader" class="loader-holder">
-            <div class="block">
-                <div class="dot white"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
+    <span id="back-top" class="text-center rounded-circle fa fa-angle-up"></span>
+    <div id="loader" class="loader-holder">
+        <div class="block">
+            <div class="dot white"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
     </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+
+            document.getElementById("use").addEventListener("change", function () {
+                var value = this.value;
+
+                // Clear selections and hide irrelevant questions
+                document.getElementById("space").selectedIndex = 0;
+                document.getElementById("spaceQuestion").style.display = "none";
+                document.getElementById("dimensions").value = "";
+                document.getElementById("dimensionQuestion").style.display = "none";
+                document.getElementById("style").selectedIndex = 0;
+                document.getElementById("styleQuestion").style.display = "none";
+
+                // Display relevant question based on selection
+                if (value === "residential" || value === "commercial") {
+                    document.getElementById("spaceQuestion").style.display = "block";
+                }
+            });
+
+            // Event listener for "space" select
+            document.getElementById("space").addEventListener("change", function () {
+                var value = this.value;
+
+                // Clear selection and hide irrelevant question
+                document.getElementById("dimensions").value = "";
+                document.getElementById("dimensionQuestion").style.display = "none";
+
+                // Display relevant question based on selection
+                if (value) {
+                    document.getElementById("dimensionQuestion").style.display = "block";
+                }
+            });
+
+            // Event listener for "dimensions" input
+            document.getElementById("dimensions").addEventListener("input", function () {
+                // Check if dimensions are entered before showing style question
+                if (this.value) {
+                    document.getElementById("styleQuestion").style.display = "block";
+                } else {
+                    document.getElementById("styleQuestion").style.display = "none";
+                }
+            });
+
+
+            document.getElementById("style").addEventListener("change", function () {
+                // Show "Additional Information" only if all previous questions are answered
+                if (
+                    document.getElementById('style').querySelector('input[name="style"]:checked')) {
+                    document.getElementById("additionalInfo").style.display = "block";
+                } else {
+                    document.getElementById("additionalInfo").style.display = "none";
+                }
+            });
+
+
+
+
+        });
+
+
+
+        emailjs.init('nwtFDTTcy9P9p2otK');
+
+        function proceed() {
+
+            event.preventDefault();
+
+            const use = document.getElementById('use').value;
+            const space = document.getElementById('space').value;
+            const dimensions = document.getElementById('dimensions').value;
+            const style = document.getElementById('style').querySelector('input[name="style"]:checked').value;
+            const fromName = document.getElementById("from_name").value;
+            const email = document.getElementById("email").value;
+            const additionalInfo = document.getElementById('info').value;
+
+
+
+            const serviceID = 'service_uhroxmb';
+            const templateID = 'template_hnjj2nj';
+
+            const templateData = {
+                use: use,
+                space: space,
+                dimensions: dimensions,
+                style: style,
+                from_name: fromName,
+                email: email,
+                additionalInfo: additionalInfo
+            };
+
+            console.log(templateData);
+
+            if (!fromName || !email || !additionalInfo || !use || !style || !space || !dimensions) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            emailjs.send(serviceID, templateID, templateData)
+                .then((res) => {
+                    alert("Form submitted successfully! Thank you, We will be contacting you shortly.");
+                    document.getElementById("form").reset(); // Reset the form after successful submission
+                }, (err) => {
+                    console.log(err);
+                    alert("Oops! Something went wrong. Please try again.");
+                });
+
+        }
+
+        document.getElementById("form").addEventListener("submit", proceed);
+
+    </script>
+
+
+
+
+
+
     <!--************************************
 			Wrapper End
 	*************************************-->

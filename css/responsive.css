@@ -3915,3 +3915,11 @@ align-items: center;}
   .v4 .hb-whychooseus-img::after {
     width: 290px;
     height: 290px; } }
+
+
+
+@media only screen and (max-width: 767px) {
+	#hb-topbar {
+	  display: none;
+	}
+  }

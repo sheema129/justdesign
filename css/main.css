@@ -727,6 +727,7 @@ address { font-style: italic; }
 /* =============================================
 			Header Style					
 ============================================= */
+
 .hb-header{
 	z-index: 10;
 	position: relative;
