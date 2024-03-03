@@ -1,9 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
@@ -22,9 +18,6 @@
 </head>
 
 <body class="hb-home hb-homeone">
-    <!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
     <!--************************************
 			Wrapper Start
 	*************************************-->
@@ -133,127 +126,77 @@
                                         <div class="hb-headcontent">
                                             <h2>Get ready to see your space</h2>
 
-                                            <div id="designForm">
-                                                <form id="form" method="POST">
-                                                    <div class="form-group">
-                                                        <div id="nameEmailQuestions" style="display: block;">
-                                                            <label for="from_name">Name</label>
-                                                            <input type="text" id="from_name" class="form-control"
-                                                                placeholder="Enter your name">
-                                                            <label for="email">Email</label>
-                                                            <input type="text" id="email" class="form-control"
-                                                                placeholder="Enter your email">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div id="useQuestion" style="display: block;">
-                                                            <p for="use">Is the design for residential or commercial
-                                                                use?
-                                                            </p>
-                                                            <select id="use">
-                                                                <option value="">Select</option>
-                                                                <option value="residential">Residential</option>
-                                                                <option value="commercial">Commercial</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div id="spaceQuestion" style="display: none;">
-                                                            <label for="space">Which space do you want to
-                                                                design?</label>
-                                                            <select id="space">
-                                                                <option value="">Select</option>
-                                                                <option value="bedroom">Bedroom</option>
-                                                                <option value="livingroom">Living Room</option>
-                                                                <option value="diningroom">Dining Room</option>
-                                                                <option value="kitchen">Kitchen</option>
-                                                                <option value="bathroom">Bathroom</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div id="dimensionQuestion" style="display: none;">
-                                                            <label for="dimensions">Room Dimensions</label>
-                                                            <input type="text" id="dimensions" class="form-control"
-                                                                placeholder="Enter length x width (e.g., 10ft x 12ft)">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div id="styleQuestion" style="display: none;">
-                                                            <label for="style">Select your style:</label>
-                                                            <div id="style" class="image-choices">
-                                                                <label for="style_contemporary">
-                                                                    <input type="radio" id="style_contemporary"
-                                                                        name="style" value="contemporary">
-                                                                    <img src="images/interior-themes1.jpg"
-                                                                        alt="Contemporary" width="100" height="75">
-                                                                    Contemporary
-                                                                </label>
-                                                                <label for="style_minimalistic">
-                                                                    <input type="radio" id="style_minimalistic"
-                                                                        name="style" value="minimalistic">
-                                                                    <img src="images/interior-themes2.jpg"
-                                                                        alt="Minimalistic" width="100" height="75">
-                                                                    Scandinavian
-                                                                </label>
-                                                                <label for="style_contemporary">
-                                                                    <input type="radio" id="style_contemporary"
-                                                                        name="style" value="contemporary">
-                                                                    <img src="images/interior-themes4.jpg"
-                                                                        alt="Contemporary" width="100" height="75">
-                                                                    Traditional
-                                                                </label>
-                                                                <label for="style_contemporary">
-                                                                    <input type="radio" id="style_contemporary"
-                                                                        name="style" value="contemporary">
-                                                                    <img src="images/interior-themes5.jpg"
-                                                                        alt="Contemporary" width="100" height="75">
-                                                                    Industrialist
-                                                                </label>
-                                                                <label for="style_contemporary">
-                                                                    <input type="radio" id="style_contemporary"
-                                                                        name="style" value="contemporary">
-                                                                    <img src="images/interior-themes6.jpg"
-                                                                        alt="Contemporary" width="100" height="75">
-                                                                    Minimalistic
-                                                                </label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div id="additionalInfo" style="display: none;">
-                                                    <label for="additionalInfo">Additional Information</label>
-                                                    <input type="text" id="info" class="form-control"
-                                                        placeholder="Share any design preferences or special considerations">
+                                            <form id="designForm" method="POST" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="from_name">Name</label>
+                                                    <input type="text" id="from_name" name="from_name" class="form-control" placeholder="Enter your name">
+                                                    <label for="email">Email</label>
+                                                    <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
                                                 </div>
-                                            </div>
+                                            
+                                                <div class="form-group">
+                                                    <label for="use">Is the design for residential or commercial use?</label>
+                                                    <select id="use" name="use" class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="residential">Residential</option>
+                                                        <option value="commercial">Commercial</option>
+                                                    </select>
+                                                </div>
+                                            
+                                                <div class="form-group">
+                                                    <label for="images">Upload your layout/plan:</label>
+                                                    <input type="file" id="images" name="images[]" accept="image/*" multiple>
+                                                </div>
+                                            
+                                                <div class="form-group">
+                                                    <label>Select your style:</label>
+                                                    <div class="image-choices">
+                                                        
+                                                        <label for="style_contemporary">
+                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
+                                                            <img src="images/interior-themes-1.jpeg" alt="Contemporary" width="100" height="75">
+                                                            Minimal Style
+                                                        </label>
 
-                                            <button class="hb-btn" style="margin: 10px;"
-                                                onclick="proceed()">Proceed</button>
+                                                        <label for="style_contemporary">
+                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
+                                                            <img src="images/interior-themes-2.jpg" alt="Contemporary" width="100" height="75">
+                                                            Scandinavian Style
+                                                        </label>
 
+                                                        <label for="style_contemporary">
+                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
+                                                            <img src="images/interior-themes-3.jpeg" alt="Contemporary" width="100" height="75">
+                                                            Contemporary Style
+                                                        </label>
+
+                                                        <label for="style_contemporary">
+                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
+                                                            <img src="images/interior-themes-4.jpg" alt="Contemporary" width="100" height="75">
+                                                            Rustic style
+                                                        </label>
+                                                        
+                                                    </div>
+                                                </div>
+                                            
+                                                <button class="hb-btn" style="margin: 10px;" type="submit">Proceed</button>
                                             </form>
-                                        </div>
+                                            
 
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
+
+
+
                 </div>
-
-
-
-
-
-    </div>
     </div>
     </div>
     </div>
@@ -323,113 +266,40 @@
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
 
-            document.getElementById("use").addEventListener("change", function () {
-                var value = this.value;
 
-                // Clear selections and hide irrelevant questions
-                document.getElementById("space").selectedIndex = 0;
-                document.getElementById("spaceQuestion").style.display = "none";
-                document.getElementById("dimensions").value = "";
-                document.getElementById("dimensionQuestion").style.display = "none";
-                document.getElementById("style").selectedIndex = 0;
-                document.getElementById("styleQuestion").style.display = "none";
+            // Event listener for form submission
+            document.getElementById("designForm").addEventListener("submit", function (event) {
+                event.preventDefault();
 
-                // Display relevant question based on selection
-                if (value === "residential" || value === "commercial") {
-                    document.getElementById("spaceQuestion").style.display = "block";
+                // Get form data
+                const formData = new FormData(this);
+
+                // Check if at least one image is uploaded
+                if (!formData.has('images[]')) {
+                    alert("Please upload at least one image.");
+                    return;
                 }
+
+                // Send the form data including images to the backend
+                fetch('https://just-design-backend.vercel.app/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("Form submitted successfully! Thank you, We will be contacting you shortly.");
+                            document.getElementById("designForm").reset();
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                        alert("Oops! Something went wrong. Please try again.");
+                    });
             });
-
-            // Event listener for "space" select
-            document.getElementById("space").addEventListener("change", function () {
-                var value = this.value;
-
-                // Clear selection and hide irrelevant question
-                document.getElementById("dimensions").value = "";
-                document.getElementById("dimensionQuestion").style.display = "none";
-
-                // Display relevant question based on selection
-                if (value) {
-                    document.getElementById("dimensionQuestion").style.display = "block";
-                }
-            });
-
-            // Event listener for "dimensions" input
-            document.getElementById("dimensions").addEventListener("input", function () {
-                // Check if dimensions are entered before showing style question
-                if (this.value) {
-                    document.getElementById("styleQuestion").style.display = "block";
-                } else {
-                    document.getElementById("styleQuestion").style.display = "none";
-                }
-            });
-
-
-            document.getElementById("style").addEventListener("change", function () {
-                // Show "Additional Information" only if all previous questions are answered
-                if (
-                    document.getElementById('style').querySelector('input[name="style"]:checked')) {
-                    document.getElementById("additionalInfo").style.display = "block";
-                } else {
-                    document.getElementById("additionalInfo").style.display = "none";
-                }
-            });
-
-
-
-
         });
 
-
-
-        emailjs.init('nwtFDTTcy9P9p2otK');
-
-        function proceed() {
-
-            event.preventDefault();
-
-            const use = document.getElementById('use').value;
-            const space = document.getElementById('space').value;
-            const dimensions = document.getElementById('dimensions').value;
-            const style = document.getElementById('style').querySelector('input[name="style"]:checked').value;
-            const fromName = document.getElementById("from_name").value;
-            const email = document.getElementById("email").value;
-            const additionalInfo = document.getElementById('info').value;
-
-
-
-            const serviceID = 'service_uhroxmb';
-            const templateID = 'template_hnjj2nj';
-
-            const templateData = {
-                use: use,
-                space: space,
-                dimensions: dimensions,
-                style: style,
-                from_name: fromName,
-                email: email,
-                additionalInfo: additionalInfo
-            };
-
-            console.log(templateData);
-
-            if (!fromName || !email || !additionalInfo || !use || !style || !space || !dimensions) {
-                alert("Please fill in all the required fields.");
-                return;
-            }
-
-            emailjs.send(serviceID, templateID, templateData)
-                .then((res) => {
-                    alert("Form submitted successfully! Thank you, We will be contacting you shortly.");
-                    document.getElementById("form").reset(); // Reset the form after successful submission
-                }, (err) => {
-                    console.log(err);
-                    alert("Oops! Something went wrong. Please try again.");
-                });
-
-        }
-
-        document.getElementById("form").addEventListener("submit", proceed);
 
     </script>
 
