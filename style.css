@@ -273,6 +273,7 @@ select {
   text-transform: none;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  width: 68%;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -319,6 +320,29 @@ input[type="text"] {
   text-transform: none;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  width: 68%;
+  margin: 12px;
+}
+
+input[type="file"] {
+  color: #666;
+  outline: none;
+  height: 40px;
+  background: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 7px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #dbdbdb;
+  text-transform: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 68%;
+  margin: 12px;
 }
 
 input[type="password"] {
@@ -615,8 +639,9 @@ input:focus {
 label {
   color: #666;
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 10px;
+  font-size: larger;
 }
 
 form p {

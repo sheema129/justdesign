@@ -128,62 +128,96 @@
 
                                             <form id="designForm" method="POST" enctype="multipart/form-data">
                                                 <div class="form-group">
-                                                    <label for="from_name">Name</label>
-                                                    <input type="text" id="from_name" name="from_name" class="form-control" placeholder="Enter your name">
-                                                    <label for="email">Email</label>
-                                                    <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email">
-                                                    <label for="phone">Phone</label>
-                                                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+
+                                                    <input type="text" id="from_name" name="from_name"
+                                                        class="form-control" placeholder="Enter your name">
+
+                                                    <input type="text" id="email" name="email" class="form-control"
+                                                        placeholder="Enter your email">
+
+                                                    <input type="text" id="phone" name="phone" class="form-control"
+                                                        placeholder="Enter your phone number">
                                                 </div>
-                                            
+
                                                 <div class="form-group">
-                                                    <label for="use">Is the design for residential or commercial use?</label>
+                                                    <label for="use"> What space do you want to Design ?</label>
                                                     <select id="use" name="use" class="form-control">
                                                         <option value="">Select</option>
                                                         <option value="residential">Residential</option>
                                                         <option value="commercial">Commercial</option>
                                                     </select>
                                                 </div>
-                                            
+
                                                 <div class="form-group">
                                                     <label for="images">Upload your layout/plan:</label>
-                                                    <input type="file" id="images" name="images[]" accept="image/*" multiple>
+                                                    <div class="input-img">
+                                                        <input type="file" id="images" name="images[]" accept="image/*"
+                                                            multiple>
+                                                    </div>
                                                 </div>
-                                            
+
+
                                                 <div class="form-group">
+                                                    <label for="inspiration">Lets Go!</label>
+                                                    <select id="inspiration" name="inspiration" class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="have">Explore my design inspiration</option>
+                                                        <option value="need">Find your design inspiration</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group" id="designInspirationImages"
+                                                    style="display: none;">
+                                                    <label for="images">Upload your design inspiration images:</label>
+                                                    <div class="input-img">
+                                                        <input type="file" id="images" name="images[]" accept="image/*"
+                                                            multiple>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group" id="defaultImages" style="display: none;">
                                                     <label>Select your style:</label>
                                                     <div class="image-choices">
-                                                        
+
                                                         <label for="style_contemporary">
-                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
-                                                            <img src="images/interior-themes-1.jpeg" alt="Contemporary" width="100" height="75">
+                                                            <input type="radio" id="style_contemporary" name="style"
+                                                                value="contemporary">
+                                                            <img src="images/interior-themes-1.jpeg" alt="Contemporary"
+                                                                width="100" height="75">
                                                             Minimal Style
                                                         </label>
 
                                                         <label for="style_contemporary">
-                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
-                                                            <img src="images/interior-themes-2.jpg" alt="Contemporary" width="100" height="75">
+                                                            <input type="radio" id="style_contemporary" name="style"
+                                                                value="contemporary">
+                                                            <img src="images/interior-themes-2.jpg" alt="Contemporary"
+                                                                width="100" height="75">
                                                             Scandinavian Style
                                                         </label>
 
                                                         <label for="style_contemporary">
-                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
-                                                            <img src="images/interior-themes-3.jpeg" alt="Contemporary" width="100" height="75">
+                                                            <input type="radio" id="style_contemporary" name="style"
+                                                                value="contemporary">
+                                                            <img src="images/interior-themes-3.jpeg" alt="Contemporary"
+                                                                width="100" height="75">
                                                             Contemporary Style
                                                         </label>
 
                                                         <label for="style_contemporary">
-                                                            <input type="radio" id="style_contemporary" name="style" value="contemporary">
-                                                            <img src="images/interior-themes-4.jpg" alt="Contemporary" width="100" height="75">
+                                                            <input type="radio" id="style_contemporary" name="style"
+                                                                value="contemporary">
+                                                            <img src="images/interior-themes-4.jpg" alt="Contemporary"
+                                                                width="100" height="75">
                                                             Rustic style
                                                         </label>
-                                                        
+
                                                     </div>
                                                 </div>
-                                            
-                                                <button class="hb-btn" style="margin: 10px;" type="submit">Proceed</button>
+
+                                                <button class="hb-btn" style="margin: 10px;"
+                                                    type="submit">Proceed</button>
                                             </form>
-                                            
 
 
                                         </div>
@@ -193,7 +227,6 @@
                             </div>
                         </div>
                     </div>
-
 
 
                 </div>
@@ -264,6 +297,23 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script type="text/javascript">
+
+
+        document.getElementById('inspiration').addEventListener('change', function () {
+            var selectedValue = this.value;
+            if (selectedValue === 'have') {
+                document.getElementById('designInspirationImages').style.display = 'block';
+                document.getElementById('defaultImages').style.display = 'none';
+            } else if (selectedValue === 'need') {
+                document.getElementById('defaultImages').style.display = 'block';
+                document.getElementById('designInspirationImages').style.display = 'none';
+            } else {
+                document.getElementById('designInspirationImages').style.display = 'none';
+                document.getElementById('defaultImages').style.display = 'none';
+            }
+        });
+
+
         document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -279,7 +329,7 @@
                     alert("Please upload at least one image.");
                     return;
                 }
-
+                
                 // Send the form data including images to the backend
                 fetch('https://just-design-backend.vercel.app/upload', {
                     method: 'POST',
@@ -323,3 +373,66 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="form-group">
+    <label>Select your style:</label>
+    <div class="image-choices">
+
+        <label for="style_contemporary">
+            <input type="radio" id="style_contemporary" name="style"
+                value="contemporary">
+            <img src="images/interior-themes-1.jpeg" alt="Contemporary"
+                width="100" height="75">
+            Minimal Style
+        </label>
+
+        <label for="style_contemporary">
+            <input type="radio" id="style_contemporary" name="style"
+                value="contemporary">
+            <img src="images/interior-themes-2.jpg" alt="Contemporary"
+                width="100" height="75">
+            Scandinavian Style
+        </label>
+
+        <label for="style_contemporary">
+            <input type="radio" id="style_contemporary" name="style"
+                value="contemporary">
+            <img src="images/interior-themes-3.jpeg" alt="Contemporary"
+                width="100" height="75">
+            Contemporary Style
+        </label>
+
+        <label for="style_contemporary">
+            <input type="radio" id="style_contemporary" name="style"
+                value="contemporary">
+            <img src="images/interior-themes-4.jpg" alt="Contemporary"
+                width="100" height="75">
+            Rustic style
+        </label>
+
+    </div>
+</div> -->
